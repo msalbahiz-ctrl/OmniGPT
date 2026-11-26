@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#212121">
+  <meta name="description" content="OmniGPT — your AI assistant.">
+  <title>OmniGPT</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-row">
+        <div class="brand-mark" aria-hidden="true">O</div>
+        <span class="brand-name">OmniGPT</span>
+        <button class="icon-button mobile-close" id="closeSidebar" aria-label="Close menu">×</button>
+      </div>
+      <button class="new-chat-button" id="newChat"><span>＋</span> New chat</button>
+      <div class="side-label">YOUR SPACE</div>
+      <div class="history-list" id="historyList"></div>
+      <div class="sidebar-bottom">
+        <div class="profile-avatar">O</div>
+        <div class="profile-copy"><strong>OmniGPT</strong><small>AI Assistant</small></div>
+        <button class="icon-button" id="clearChats" title="Clear all chats" aria-label="Clear all chats">⌫</button>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" aria-label="Open menu">☰</button>
+        <div class="mobile-brand"><span class="brand-mark small">O</span> OmniGPT</div>
+        <div class="model-pill"><span class="status-dot"></span> OmniGPT AI</div>
+      </header>
+
+      <section class="chat-area" id="chatArea">
+        <div class="welcome" id="welcome">
+          <div class="welcome-logo">O</div>
+          <h1>What can I help with?</h1>
+          <p>Ask a question, explore an idea, or build something new.</p>
+          <div class="suggestion-grid">
+            <button class="suggestion" data-prompt="Explain artificial intelligence in simple words."><span>✦</span><strong>Explain something</strong><small>Make a hard topic simple</small></button>
+            <button class="suggestion" data-prompt="Give me 5 creative website project ideas."><span>⌘</span><strong>Build an idea</strong><small>Explore a new project</small></button>
+            <button class="suggestion" data-prompt="Help me write clean JavaScript code for a beginner project."><span>⌁</span><strong>Write some code</strong><small>Learn by building</small></button>
+            <button class="suggestion" data-prompt="Teach me 5 useful facts about space."><span>◉</span><strong>Learn something</strong><small>Discover something new</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <form class="composer" id="chatForm">
+          <textarea id="messageInput" rows="1" maxlength="6000" placeholder="Message OmniGPT..." aria-label="Message OmniGPT"></textarea>
+          <div class="composer-bottom">
+            <span class="composer-hint">OmniGPT can make mistakes. Check important information.</span>
+            <button class="send-button" id="sendButton" type="submit" aria-label="Send message">↑</button>
+          </div>
+        </form>
+        <div class="footer-note">OmniGPT · Your AI, your world</div>
+      </footer>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
